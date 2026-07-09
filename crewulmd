@@ -107,7 +107,6 @@
 </head>
 <body>
 
-    <!-- Navigation (Links back to index.html) -->
     <nav>
         <a href="index.html" class="logo">Skull's Paradise</a>
         <div class="nav-links">
@@ -117,24 +116,20 @@
         </div>
     </nav>
 
-    <!-- Subpage Hero -->
     <section class="hero">
         <a href="index.html#downloads" class="btn btn-back">⬅ Return to Main Hub</a>
-        <h1>Battlefield Bad Conpany 2</h1>
-        <p>All required files to run Project ROME community server project</p>
+        <h1>The Crew Archives</h1>
+        <p>All required files to run The Crew Unlimited community server project.</p>
     </section>
 
-    <!-- Specific Files List -->
     <section>
         <div class="grid">
-            <!-- File 1 -->
             <div class="card">
                 <h3>Clean Files</h3>
-                <p>Clean Files from Ubisoft which is needed for Crew Unlimited Mod.</p>
+                <p>Clean Files from Ubisoft which are needed for The Crew Unlimited Mod.</p>
                 <a href="https://vikingfile.com/f/bi0JDayIfM" class="btn btn-download" target="_blank">Download Files</a>
             </div>
 
-            <!-- Placeholder File 2 -->
             <div class="card">
                 <h3>The Crew Unlimited</h3>
                 <p>TCU is a server emulator project that revives the decommissioned online-only game "The Crew" (2014).</p>
@@ -143,7 +138,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Skull's Paradise. All systems nominal.</p>
         <p><em>Disclaimer: All files linked are either community-developed modifications or software classified as abandonware. These resources are provided strictly for educational, archival, and compatibility purposes. Skull's Paradise does not host pirated content and does not endorse, support, or condone software piracy in any form.</em></p>

@@ -1,275 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SkullFrag | Skull's Paradise 🌴</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skull's Paradise 🌴 | Official Community Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gamer-red: #ff2a2a;
+            --gamer-red-dark: #cc0000;
+            --bg-base: #09090b;
+            --bg-surface: #18181b;
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --border-color: #27272a;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: var(--bg-base); 
+            color: var(--text-main); 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            font-size: 1.05rem;
+            /* Subtle dot matrix gaming background */
+            background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+            background-size: 24px 24px;
+            background-attachment: fixed;
+        }
+        html { scroll-behavior: smooth; }
+        
+        h1, h2, h3, .logo { 
+            font-family: 'Chakra Petch', sans-serif; 
+            text-transform: uppercase; 
+            font-style: italic;
+            letter-spacing: 1px; 
+        }
 
-<style>
+        /* Navigation Bar */
+        nav { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 20px 5%; background-color: rgba(9, 9, 11, 0.95); 
+            border-bottom: 2px solid var(--gamer-red); 
+            position: sticky; top: 0; z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+        .logo { 
+            font-size: 1.8rem; font-weight: 700; color: #fff; 
+            text-decoration: none;
+        }
+        .nav-links a { 
+            color: var(--text-muted); text-decoration: none; margin-left: 30px; 
+            font-weight: 600; text-transform: uppercase;
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 1.1rem;
+            transition: color 0.2s ease; 
+        }
+        .nav-links a:hover { color: var(--gamer-red); }
 
-:root {
-    --red:#ff1e1e;
-    --dark:#020202;
-    --card:#0d0d0d;
-    --text:#e5e5e5;
-    --muted:#777;
-}
+        .hero { 
+            text-align: center; padding: 120px 20px; 
+            background: linear-gradient(135deg, rgba(255, 42, 42, 0.1) 0%, var(--bg-base) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .hero h1 { 
+            font-size: 4.5rem; margin-bottom: 15px; color: #ffffff; 
+            line-height: 1.1;
+        }
+        .hero h1 span { color: var(--gamer-red); }
+        .hero p { 
+            font-size: 1.25rem; max-width: 650px; margin: 0 auto 35px; 
+            color: var(--text-muted); font-weight: 400;
+        }
+        
+        .btn { 
+            padding: 14px 32px; 
+            text-decoration: none; 
+            font-family: 'Chakra Petch', sans-serif; 
+            font-weight: 700; 
+            font-size: 1.1rem;
+            font-style: italic;
+            text-transform: uppercase;
+            transition: all 0.2s ease; 
+            display: inline-block; cursor: pointer;
+            border: none;
+            /* Creates the angled sci-fi/gaming cuts on the corners */
+            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+        }
+        .btn-discord { 
+            background-color: #5865F2; /* Official Discord Color */
+            color: #fff; margin-right: 15px; 
+        }
+        .btn-discord:hover { 
+            background-color: #4752C4; 
+            transform: scale(1.05);
+        }
+        .btn-download { 
+            background-color: var(--gamer-red); 
+            color: #fff;
+        }
+        .btn-download:hover { 
+            background-color: var(--gamer-red-dark); 
+            transform: scale(1.05);
+        }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+        /* Content Sections */
+        section { padding: 90px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { 
+            font-size: 2.5rem; 
+            margin-bottom: 40px; color: #fff; 
+            display: inline-block;
+            border-bottom: 4px solid var(--gamer-red);
+            padding-bottom: 5px;
+        }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        
+        .card { 
+            background-color: var(--bg-surface); padding: 35px 30px; 
+            border: 1px solid var(--border-color); 
+            border-left: 4px solid var(--gamer-red);
+            transition: all 0.3s ease; position: relative; 
+        }
+        .card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 30px rgba(255, 42, 42, 0.1); 
+            border-color: #3f3f46;
+        }
+        .card h3 { 
+            color: #fff; margin-bottom: 15px; font-size: 1.5rem; 
+        }
+        .card p { color: var(--text-muted); margin-bottom: 25px; min-height: 60px; }
 
-body {
-    background:#020202;
-    color:var(--text);
-    font-family:'Inter', sans-serif;
-    overflow-x:hidden;
-}
+        .announcement-box { 
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,42,42,0.03) 10px, rgba(255,42,42,0.03) 20px);
+            padding: 35px; margin-bottom: 40px; 
+            position: relative;
+        }
+        /* Top red accent bar for announcement */
+        .announcement-box::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+            background-color: var(--gamer-red);
+        }
+        .announcement-box h2 { 
+            color: #fff; margin-bottom: 15px; font-size: 2rem; 
+        }
+        .announcement-box p { color: var(--text-muted); margin-bottom: 25px; font-size: 1.15rem; }
 
-/* PARTICLE CANVAS */
-#particles {
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:-1;
-}
+        /* Footer */
+        footer { 
+            text-align: center; padding: 40px; background-color: var(--bg-surface); 
+            font-size: 0.95rem; color: var(--text-muted); border-top: 1px solid var(--border-color); 
+        }
+        footer p { margin-bottom: 10px; }
 
-/* NAV */
-nav {
-    display:flex;
-    justify-content:space-between;
-    padding:18px 8%;
-    border-bottom:1px solid #111;
-    background:#000000cc;
-    backdrop-filter: blur(10px);
-}
-
-.logo {
-    font-family:'Orbitron';
-    color:var(--red);
-    font-size:1.5rem;
-    letter-spacing:2px;
-}
-
-.nav-links a {
-    margin-left:20px;
-    color:var(--muted);
-    text-decoration:none;
-}
-
-.nav-links a:hover {
-    color:var(--red);
-}
-
-/* HERO */
-.hero {
-    text-align:center;
-    padding:120px 20px;
-}
-
-.hero h1 {
-    font-family:'Orbitron';
-    font-size:3.5rem;
-    color:var(--red);
-    text-shadow:0 0 10px var(--red), 0 0 40px #400;
-}
-
-.hero p {
-    margin-top:15px;
-    color:var(--muted);
-}
-
-/* BUTTON */
-.btn {
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 28px;
-    background:transparent;
-    border:1px solid var(--red);
-    color:var(--red);
-    text-decoration:none;
-    transition:0.3s;
-}
-
-.btn:hover {
-    background:var(--red);
-    color:#000;
-    box-shadow:0 0 20px var(--red);
-}
-
-/* SECTION */
-section {
-    padding:70px 8%;
-}
-
-/* GRID */
-.grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-/* CARD */
-.card {
-    background:var(--card);
-    padding:25px;
-    border:1px solid #111;
-    transition:0.3s;
-    position:relative;
-}
-
-.card::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    border:1px solid transparent;
-    transition:0.3s;
-}
-
-.card:hover::before {
-    border-color:var(--red);
-    box-shadow:0 0 20px var(--red);
-}
-
-.card h3 {
-    font-family:'Orbitron';
-    margin-bottom:10px;
-}
-
-/* LIVE */
-iframe {
-    width:100%;
-    height:420px;
-    border:none;
-    margin-top:20px;
-}
-
-/* FOOTER */
-footer {
-    text-align:center;
-    padding:30px;
-    border-top:1px solid #111;
-    color:#666;
-}
-
-</style>
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; }
+            .nav-links a { margin: 0 15px; }
+            .hero h1 { font-size: 3rem; }
+            .hero { padding: 80px 20px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<canvas id="particles"></canvas>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">Skull's Paradise 🌴</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#news">Updates</a>
+            <a href="#downloads">Downloads</a>
+        </div>
+    </nav>
 
-<!-- NAV -->
-<nav>
-    <div class="logo">SKULLFRAG</div>
-    <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#downloads">Mods</a>
-        <a href="#live">Live</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to <span>Paradise</span></h1>
+        <p>The official external resource hub. Grab your files, check the latest updates, and plug back into the mainframe.</p>
+        <a href="https://discord.com/invite/skull-s-paradise-759811988204683275" class="btn btn-discord">Join Discord</a>
+        <a href="#downloads" class="btn btn-download">Browse Files</a>
+    </section>
+
+    <!-- Stream & Server Updates -->
+    <section id="news">
+        <h2 class="section-title">System Updates</h2>
+        
+<div class="announcement-box">
+    <h2>🔴 TRANSMISSION LIVE: Catch Skullfrag</h2>
+    <p>We are broadcasting live on YouTube! Drop in, hang out, and check out the latest gameplay. Don't forget to claim your active roles in the Discord server.</p>
+    
+    <!-- Embeds the live stream directly -->
+    <div class="video-container">
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/live_stream?channel=UCNRCey7k-aHn8BS4midltLg" 
+            title="Current Broadcast" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
     </div>
-</nav>
+    </section>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>WELCOME TO THE UNDERGROUND</h1>
-    <p>Single Player Modding • Game Fixes • Giveaways</p>
+    <!-- Download Hub -->
+    <section id="downloads">
+        <h2 class="section-title">Resource Archive</h2>
+        
+        <div class="grid">
+            <!-- Download Card 1 (Now points to subpage) -->
+            <div class="card">
+                <h3>GTA San Andreas Archives</h3>
+                <p>Access all files, patches, and mods required for the ultimate GTA SA setup.</p>
+                <!-- This href now links to the local file instead of vikingfile -->
+                <a href="gta-sa.html" class="btn btn-download">Open Category</a>
+            </div>
 
-    <a href="https://dsc.gg/skullfrag" class="btn">ENTER DISCORD</a>
-</div>
+            <!-- Download Card 2 -->
+            <div class="card">
+                <h3>GTA Vice City Archives</h3>
+                <p>Access all files, patches, and mods required for the ultimate GTA VC setup.</p>
+                <!-- This href now links to the local file instead of vikingfile -->
+                <a href="gta-vc.html" class="btn btn-download">Open Category</a>
+            </div>
 
-<!-- DOWNLOADS -->
-<section id="downloads">
-    <h2 style="font-family:'Orbitron'; margin-bottom:20px;">MOD ARCHIVES</h2>
+            <!-- Download Card 3 -->
+            <div class="card">
+                <h3>BF Bad Company 2 Archives</h3>
+                <p>Access clean files and other required mods for Project ROME.</p>
+                <!-- This href now links to the local file instead of vikingfile -->
+                <a href="bfbc2.html" class="btn btn-download">Open Category</a>
+            </div>
 
-    <div class="grid">
-
-        <div class="card">
-            <h3>GTA SA</h3>
-            <p>Complete mod packs</p>
-            <a href="gta-sa.html" class="btn">Open</a>
+            <!-- Download Card 4 -->
+            <div class="card">
+                <h3>The Crew Archives</h3>
+                <p>Access clean files and other required mods for Crew Unlimited setup.</p>
+                <!-- This href now links to the local file instead of vikingfile -->
+                <a href="crewulmd.html" class="btn btn-download">Open Category</a>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <h3>GTA VC</h3>
-            <p>Fixes & enhancements</p>
-            <a href="gta-vc.html" class="btn">Open</a>
-        </div>
-
-        <div class="card">
-            <h3>BFBC2</h3>
-            <p>Project ROME setup</p>
-            <a href="bfbc2.html" class="btn">Open</a>
-        </div>
-
-        <div class="card">
-            <h3>THE CREW</h3>
-            <p>Unlimited tools</p>
-            <a href="crewulmd.html" class="btn">Open</a>
-        </div>
-
-    </div>
-</section>
-
-<!-- LIVE -->
-<section id="live">
-    <h2 style="font-family:'Orbitron';">LIVE STREAM</h2>
-
-    <iframe src="https://www.youtube.com/embed/live_stream?channel=UCNRCey7k-aHn8BS4midltLg" allowfullscreen></iframe>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 SkullFrag</p>
-    <p>Community Driven • No Piracy Hosted</p>
-</footer>
-
-<!-- PARTICLE SCRIPT -->
-<script>
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-for (let i = 0; i < 120; i++) {
-    particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 2,
-        speedX: (Math.random() - 0.5) * 0.4,
-        speedY: (Math.random() - 0.5) * 0.4
-    });
-}
-
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = "rgba(255, 30, 30, 0.7)";
-
-    particles.forEach(p => {
-        p.x += p.speedX;
-        p.y += p.speedY;
-
-        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
-    });
-
-    requestAnimationFrame(animate);
-}
-
-animate();
-
-window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
-</script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Skull's Paradise. All systems nominal.</p>
+        <p><em>Disclaimer: All files linked are either community-developed modifications or software classified as abandonware. These resources are provided strictly for educational, archival, and compatibility purposes. Skull's Paradise does not host pirated content and does not endorse, support, or condone software piracy in any form.</em></p>
+    </footer>
 
 </body>
 </html>

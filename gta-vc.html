@@ -7,75 +7,90 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Friendly, rounded fonts for the beachy vibe -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* Exact same styles as your main page to keep it consistent */
         :root {
-            --gamer-red: #ff2a2a;
-            --gamer-red-dark: #cc0000;
-            --bg-base: #09090b;
-            --bg-surface: #18181b;
-            --text-main: #f4f4f5;
-            --text-muted: #a1a1aa;
-            --border-color: #27272a;
+            --ocean-blue: #0077b6;
+            --ocean-light: #90e0ef;
+            --sand-base: #fdfbf7;
+            --sand-dark: #f0e6d2;
+            --coral-accent: #f4a261;
+            --coral-dark: #e76f51;
+            --text-main: #023e8a;
+            --text-muted: #5c677d;
+            --bg-surface: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
-            background-color: var(--bg-base); 
+            background: linear-gradient(180deg, #caf0f8 0%, var(--sand-base) 100%);
+            background-attachment: fixed;
             color: var(--text-main); 
             font-family: 'Inter', sans-serif; 
             line-height: 1.6; 
             font-size: 1.05rem;
-            background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
-            background-size: 24px 24px;
-            background-attachment: fixed;
         }
         html { scroll-behavior: smooth; }
         
         h1, h2, h3, .logo { 
-            font-family: 'Chakra Petch', sans-serif; 
-            text-transform: uppercase; 
-            font-style: italic;
-            letter-spacing: 1px; 
+            font-family: 'Fredoka', sans-serif; 
+            letter-spacing: 0.5px; 
         }
 
+        /* Navigation Bar */
         nav { 
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 20px 5%; background-color: rgba(9, 9, 11, 0.95); 
-            border-bottom: 2px solid var(--gamer-red); 
+            padding: 20px 5%; 
+            background-color: rgba(255, 255, 255, 0.85); 
+            border-bottom: 3px solid var(--ocean-light); 
             position: sticky; top: 0; z-index: 100;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 119, 182, 0.05);
         }
-        .logo { font-size: 1.8rem; font-weight: 700; color: #fff; text-decoration: none; }
+        .logo { 
+            font-size: 2rem; font-weight: 700; color: var(--ocean-blue); 
+            text-decoration: none;
+        }
         .nav-links a { 
             color: var(--text-muted); text-decoration: none; margin-left: 30px; 
             font-weight: 600; text-transform: uppercase;
-            font-family: 'Chakra Petch', sans-serif; font-size: 1.1rem; transition: color 0.2s ease; 
+            font-family: 'Fredoka', sans-serif; font-size: 1.1rem; transition: color 0.2s ease; 
         }
-        .nav-links a:hover { color: var(--gamer-red); }
+        .nav-links a:hover { color: var(--coral-accent); }
 
         .hero { 
             text-align: center; padding: 80px 20px 40px; 
-            background: linear-gradient(135deg, rgba(255, 42, 42, 0.1) 0%, var(--bg-base) 100%);
-            border-bottom: 1px solid var(--border-color);
+            background: radial-gradient(circle at center, rgba(244, 162, 97, 0.1) 0%, transparent 70%);
         }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; color: #ffffff; line-height: 1.1; }
-        .hero p { font-size: 1.1rem; max-width: 650px; margin: 0 auto 25px; color: var(--text-muted); }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; color: var(--ocean-blue); line-height: 1.1; }
+        .hero p { font-size: 1.1rem; max-width: 650px; margin: 0 auto 25px; color: var(--text-muted); font-weight: 500; }
         
         .btn { 
-            padding: 14px 32px; text-decoration: none; font-family: 'Chakra Petch', sans-serif; 
-            font-weight: 700; font-size: 1.1rem; font-style: italic; text-transform: uppercase;
-            transition: all 0.2s ease; display: inline-block; cursor: pointer; border: none;
-            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+            padding: 14px 32px; text-decoration: none; font-family: 'Fredoka', sans-serif; 
+            font-weight: 600; font-size: 1.1rem; text-transform: uppercase;
+            transition: all 0.3s ease; display: inline-block; cursor: pointer; border: none;
+            border-radius: 50px; /* Pill-shaped buttons */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .btn-back { background-color: #3f3f46; color: #fff; margin-bottom: 20px; }
-        .btn-back:hover { background-color: #52525b; transform: scale(1.05); }
+        .btn-back { 
+            background-color: var(--ocean-blue); 
+            color: #fff; margin-bottom: 20px; 
+        }
+        .btn-back:hover { 
+            background-color: var(--text-main); 
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 119, 182, 0.3);
+        }
         
-        .btn-download { background-color: var(--gamer-red); color: #fff; }
-        .btn-download:hover { background-color: var(--gamer-red-dark); transform: scale(1.05); }
+        .btn-download { background-color: var(--coral-accent); color: #fff; margin-bottom: 10px;}
+        .btn-download:hover { 
+            background-color: var(--coral-dark); 
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(244, 162, 97, 0.3);
+        }
 
         section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
         
@@ -83,18 +98,24 @@
         
         .card { 
             background-color: var(--bg-surface); padding: 35px 30px; 
-            border: 1px solid var(--border-color); border-left: 4px solid var(--gamer-red);
+            border-radius: 20px;
+            border-bottom: 5px solid var(--ocean-light);
             transition: all 0.3s ease; position: relative; 
+            box-shadow: 0 10px 30px rgba(0, 119, 182, 0.08);
+            display: flex; flex-direction: column;
         }
         .card:hover { 
-            transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255, 42, 42, 0.1); border-color: #3f3f46;
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 40px rgba(0, 119, 182, 0.15); 
+            border-bottom-color: var(--coral-accent);
         }
-        .card h3 { color: #fff; margin-bottom: 15px; font-size: 1.5rem; }
-        .card p { color: var(--text-muted); margin-bottom: 25px; min-height: 60px; }
+        .card h3 { color: var(--ocean-blue); margin-bottom: 15px; font-size: 1.5rem; }
+        .card p { color: var(--text-muted); margin-bottom: 25px; flex-grow: 1; }
 
         footer { 
             text-align: center; padding: 40px; background-color: var(--bg-surface); 
-            font-size: 0.95rem; color: var(--text-muted); border-top: 1px solid var(--border-color); 
+            font-size: 0.95rem; color: var(--text-muted); border-top: 1px solid var(--sand-dark); 
+            margin-top: 50px;
         }
         footer p { margin-bottom: 10px; }
 
@@ -109,7 +130,7 @@
 
     <!-- Navigation (Links back to index.html) -->
     <nav>
-        <a href="index.html" class="logo">Skull's Paradise</a>
+        <a href="index.html" class="logo">Skull's Paradise 🌴</a>
         <div class="nav-links">
             <a href="index.html#home">Home</a>
             <a href="index.html#news">Updates</a>
@@ -139,7 +160,7 @@
                 <h3>Controller Fix</h3>
                 <p>Use modern controllers with gta sa.</p>
                 <a href="https://silentsblog.com/mods/gta-vc/#ginput" class="btn btn-download" target="_blank">Download Controller Fix</a>
-              
+                
                 <a href="https://youtu.be/NDtzoWu8PQs?si=ijBl2gdavaO8QFiR" class="btn btn-download" target="_blank">Watch Tutorial Video</a>
             </div>
 
@@ -154,7 +175,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Skull's Paradise. All systems nominal.</p>
+        <p>&copy; 2026 Skull's Paradise. All tides are nominal.</p>
         <p><em>Disclaimer: All files linked are either community-developed modifications or software classified as abandonware. These resources are provided strictly for educational, archival, and compatibility purposes. Skull's Paradise does not host pirated content and does not endorse, support, or condone software piracy in any form.</em></p>
     </footer>
 

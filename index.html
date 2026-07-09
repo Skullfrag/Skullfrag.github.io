@@ -4,164 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skull's Paradise | Official Community Hub</title>
-    <!-- Importing a retro-futuristic font -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* Base Settings & Synthwave Variables */
         :root {
-            --neon-pink: #ff00a0;
-            --neon-cyan: #00f3ff;
-            --neon-purple: #9d00ff;
-            --dark-bg: #090214;
-            --panel-bg: #110526;
-            --text-main: #e0e0e0;
+            --gamer-red: #ff2a2a;
+            --gamer-red-dark: #cc0000;
+            --bg-base: #09090b;
+            --bg-surface: #18181b;
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --border-color: #27272a;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
-            background-color: var(--dark-bg); 
+            background-color: var(--bg-base); 
             color: var(--text-main); 
-            font-family: 'Rajdhani', sans-serif; /* Clean, slightly techy body font */
+            font-family: 'Inter', sans-serif; 
             line-height: 1.6; 
-            font-size: 1.1rem;
-            /* Subtle retro grid background */
-            background-image: 
-                linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
+            font-size: 1.05rem;
+            /* Subtle dot matrix gaming background */
+            background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+            background-size: 24px 24px;
             background-attachment: fixed;
         }
         html { scroll-behavior: smooth; }
         
-        h1, h2, h3, .logo { font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
+        h1, h2, h3, .logo { 
+            font-family: 'Chakra Petch', sans-serif; 
+            text-transform: uppercase; 
+            font-style: italic;
+            letter-spacing: 1px; 
+        }
 
         /* Navigation Bar */
         nav { 
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 20px 5%; background-color: rgba(9, 2, 20, 0.95); 
-            border-bottom: 2px solid var(--neon-cyan); 
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+            padding: 20px 5%; background-color: rgba(9, 9, 11, 0.95); 
+            border-bottom: 2px solid var(--gamer-red); 
             position: sticky; top: 0; z-index: 100;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
         }
         .logo { 
-            font-size: 1.5rem; font-weight: 900; color: #fff; 
-            text-decoration: none; text-transform: uppercase; 
-            text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+            font-size: 1.8rem; font-weight: 700; color: #fff; 
+            text-decoration: none;
         }
         .nav-links a { 
-            color: #fff; text-decoration: none; margin-left: 25px; 
+            color: var(--text-muted); text-decoration: none; margin-left: 30px; 
             font-weight: 600; text-transform: uppercase;
-            transition: all 0.3s ease; 
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 1.1rem;
+            transition: color 0.2s ease; 
         }
-        .nav-links a:hover { 
-            color: var(--neon-cyan); 
-            text-shadow: 0 0 8px var(--neon-cyan);
-        }
+        .nav-links a:hover { color: var(--gamer-red); }
 
-        /* Hero Banner */
         .hero { 
             text-align: center; padding: 120px 20px; 
-            background: linear-gradient(180deg, rgba(9,2,20,0) 0%, var(--dark-bg) 100%);
+            background: linear-gradient(135deg, rgba(255, 42, 42, 0.1) 0%, var(--bg-base) 100%);
+            border-bottom: 1px solid var(--border-color);
         }
         .hero h1 { 
-            font-size: 4rem; margin-bottom: 15px; color: #ffffff; 
-            text-transform: uppercase; 
-            text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+            font-size: 4.5rem; margin-bottom: 15px; color: #ffffff; 
+            line-height: 1.1;
         }
-        .hero h1 span { 
-            color: #fff;
-            text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
-        }
+        .hero h1 span { color: var(--gamer-red); }
         .hero p { 
-            font-size: 1.4rem; max-width: 600px; margin: 0 auto 30px; 
-            color: #b3a5c4; font-weight: 600;
+            font-size: 1.25rem; max-width: 650px; margin: 0 auto 35px; 
+            color: var(--text-muted); font-weight: 400;
         }
         
-        /* Buttons - Neon Style */
         .btn { 
-            padding: 12px 28px; border-radius: 4px; text-decoration: none; 
-            font-family: 'Orbitron', sans-serif; font-weight: 700; text-transform: uppercase;
-            transition: all 0.3s ease; display: inline-block; cursor: pointer;
-            background: transparent;
+            padding: 14px 32px; 
+            text-decoration: none; 
+            font-family: 'Chakra Petch', sans-serif; 
+            font-weight: 700; 
+            font-size: 1.1rem;
+            font-style: italic;
+            text-transform: uppercase;
+            transition: all 0.2s ease; 
+            display: inline-block; cursor: pointer;
+            border: none;
+            /* Creates the angled sci-fi/gaming cuts on the corners */
+            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
         }
         .btn-discord { 
-            color: var(--neon-cyan); border: 2px solid var(--neon-cyan); margin-right: 15px; 
-            box-shadow: 0 0 10px rgba(0, 243, 255, 0.2), inset 0 0 10px rgba(0, 243, 255, 0.2);
+            background-color: #5865F2; /* Official Discord Color */
+            color: #fff; margin-right: 15px; 
         }
         .btn-discord:hover { 
-            background-color: var(--neon-cyan); color: var(--dark-bg); 
-            box-shadow: 0 0 20px var(--neon-cyan), inset 0 0 10px var(--neon-cyan);
+            background-color: #4752C4; 
+            transform: scale(1.05);
         }
         .btn-download { 
-            color: var(--neon-pink); border: 2px solid var(--neon-pink);
-            box-shadow: 0 0 10px rgba(255, 0, 160, 0.2), inset 0 0 10px rgba(255, 0, 160, 0.2);
+            background-color: var(--gamer-red); 
+            color: #fff;
         }
         .btn-download:hover { 
-            background-color: var(--neon-pink); color: var(--dark-bg); 
-            box-shadow: 0 0 20px var(--neon-pink), inset 0 0 10px var(--neon-pink);
+            background-color: var(--gamer-red-dark); 
+            transform: scale(1.05);
         }
 
         /* Content Sections */
-        section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
+        section { padding: 90px 5%; max-width: 1200px; margin: 0 auto; }
         .section-title { 
-            font-size: 2.2rem; border-bottom: 2px solid var(--neon-purple); 
-            padding-bottom: 15px; margin-bottom: 40px; color: #fff; 
-            text-transform: uppercase; text-shadow: 0 0 8px var(--neon-purple);
+            font-size: 2.5rem; 
+            margin-bottom: 40px; color: #fff; 
+            display: inline-block;
+            border-bottom: 4px solid var(--gamer-red);
+            padding-bottom: 5px;
         }
         
-        /* Grid Layouts for Cards */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         
-        /* Individual Cards */
         .card { 
-            background-color: var(--panel-bg); padding: 30px; 
-            border-radius: 8px; border: 1px solid var(--neon-purple); 
-            transition: all 0.3s ease; position: relative; overflow: hidden;
-        }
-        /* Top glowing line on cards */
-        .card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
-            background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan);
+            background-color: var(--bg-surface); padding: 35px 30px; 
+            border: 1px solid var(--border-color); 
+            border-left: 4px solid var(--gamer-red);
+            transition: all 0.3s ease; position: relative; 
         }
         .card:hover { 
             transform: translateY(-5px); 
-            box-shadow: 0 10px 20px rgba(157, 0, 255, 0.2), 0 0 15px rgba(157, 0, 255, 0.4); 
+            box-shadow: 0 10px 30px rgba(255, 42, 42, 0.1); 
+            border-color: #3f3f46;
         }
         .card h3 { 
-            color: var(--neon-cyan); margin-bottom: 15px; font-size: 1.4rem; 
-            text-shadow: 0 0 5px rgba(0, 243, 255, 0.5);
+            color: #fff; margin-bottom: 15px; font-size: 1.5rem; 
         }
-        .card p { color: #b3a5c4; margin-bottom: 25px; min-height: 50px; }
+        .card p { color: var(--text-muted); margin-bottom: 25px; min-height: 60px; }
 
-        /* Live Stream / Announcement Banner */
         .announcement-box { 
-            background: linear-gradient(135deg, var(--panel-bg) 0%, rgba(255, 0, 160, 0.1) 100%); 
-            border: 1px solid var(--neon-pink); border-left: 5px solid var(--neon-pink); 
-            padding: 30px; border-radius: 8px; margin-bottom: 40px; 
-            box-shadow: 0 0 15px rgba(255, 0, 160, 0.15);
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,42,42,0.03) 10px, rgba(255,42,42,0.03) 20px);
+            padding: 35px; margin-bottom: 40px; 
+            position: relative;
+        }
+        /* Top red accent bar for announcement */
+        .announcement-box::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+            background-color: var(--gamer-red);
         }
         .announcement-box h2 { 
-            color: #fff; margin-bottom: 10px; font-size: 1.8rem; 
-            text-shadow: 0 0 8px var(--neon-pink);
+            color: #fff; margin-bottom: 15px; font-size: 2rem; 
         }
-        .announcement-box p { color: #e0e0e0; margin-bottom: 20px; font-size: 1.2rem; }
+        .announcement-box p { color: var(--text-muted); margin-bottom: 25px; font-size: 1.15rem; }
 
         /* Footer */
         footer { 
-            text-align: center; padding: 40px; background-color: rgba(9, 2, 20, 0.9); 
-            font-size: 0.9rem; color: #736b85; border-top: 1px solid var(--neon-cyan); 
-            box-shadow: 0 -5px 15px rgba(0, 243, 255, 0.1);
+            text-align: center; padding: 40px; background-color: var(--bg-surface); 
+            font-size: 0.95rem; color: var(--text-muted); border-top: 1px solid var(--border-color); 
         }
         footer p { margin-bottom: 10px; }
 
-        /* Mobile Responsiveness */
         @media (max-width: 768px) {
             nav { flex-direction: column; gap: 15px; }
-            .nav-links a { margin: 0 10px; }
-            .hero h1 { font-size: 2.5rem; }
+            .nav-links a { margin: 0 15px; }
+            .hero h1 { font-size: 3rem; }
             .hero { padding: 80px 20px; }
         }
     </style>
@@ -182,7 +184,7 @@
     <section id="home" class="hero">
         <h1>Welcome to <span>Paradise</span></h1>
         <p>The official external resource hub. Grab your files, check the latest updates, and plug back into the mainframe.</p>
-        <a href="https://discord.com/invite/skull-s-paradise-759811988204683275" class="btn btn-discord">Join Discord</a>
+        <a href="YOUR_DISCORD_LINK_HERE" class="btn btn-discord">Join Discord</a>
         <a href="#downloads" class="btn btn-download">Browse Files</a>
     </section>
 
@@ -193,7 +195,7 @@
         <div class="announcement-box">
             <h2>🔴 TRANSMISSION LIVE: Catch Skullfrag</h2>
             <p>We are broadcasting live on YouTube! Drop in, hang out, and check out the latest gameplay. Don't forget to claim your active roles in the Discord server.</p>
-            <a href="http://youtube.com/skullfrag" class="btn btn-download">Watch Stream</a>
+            <a href="YOUR_YOUTUBE_LINK_HERE" class="btn btn-download">Watch Stream</a>
         </div>
     </section>
 
@@ -204,23 +206,23 @@
         <div class="grid">
             <!-- Download Card 1 -->
             <div class="card">
-                <h3>GTA San Andreas 1.0</h3>
-                <p>GTA San Andreas 1.0 which is required for modding.</p>
-                <a href="https://vikingfile.com/f/gvb29IKTiZ" class="btn btn-download" target="_blank">Initiate Download</a>
+                <h3>GTA Stability Patch v1.4</h3>
+                <p>The latest community-tested fixes to prevent crashes and optimize performance during heavy loads.</p>
+                <a href="YOUR_EXTERNAL_LINK_HERE" class="btn btn-download" target="_blank">Initiate Download</a>
             </div>
 
             <!-- Download Card 2 -->
             <div class="card">
-                <h3>The Crew Clean Files</h3>
-                <p>The Crew game files for The Crew Unlimited Mod.</p>
-                <a href="https://vikingfile.com/f/bi0JDayIfM" class="btn btn-download" target="_blank">Initiate Download</a>
+                <h3>Required Server Tools</h3>
+                <p>Essential utilities and configuration files required for the optimal community setup.</p>
+                <a href="YOUR_EXTERNAL_LINK_HERE" class="btn btn-download" target="_blank">Initiate Download</a>
             </div>
 
             <!-- Download Card 3 -->
             <div class="card">
-                <h3>Battlefield Bad Company 2 Clean Files</h3>
-                <p>BFBC2 Clean EA Files for Project ROME community project.</p>
-                <a href="https://vikingfile.com/f/tz6VElyYmI" class="btn btn-download" target="_blank">Initiate Download</a>
+                <h3>Graphics Optimization</h3>
+                <p>Custom settings file balanced for both visual fidelity and smooth framerates in the neon city.</p>
+                <a href="YOUR_EXTERNAL_LINK_HERE" class="btn btn-download" target="_blank">Initiate Download</a>
             </div>
         </div>
     </section>
@@ -228,7 +230,7 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Skull's Paradise. All systems nominal.</p>
-        <p><em>Disclaimer: All files provided are either Abandonware and/or Community Moddifications</em></p>
+        <p><em>Disclaimer: All files provided are community modifications intended for educational and optimization purposes. This site is strictly compliant with Discord's Terms of Service.</em></p>
     </footer>
 
 </body>

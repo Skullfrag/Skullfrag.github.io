@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skull's Paradise | Official Community Hub</title>
+    <style>
+        /* Base Settings */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #0d0d0d; color: #f0f0f0; line-height: 1.6; }
+        html { scroll-behavior: smooth; }
+
+        /* Navigation Bar */
+        nav { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 20px 5% ; background-color: #151515; 
+            border-bottom: 2px solid #ff3333; position: sticky; top: 0; z-index: 100;
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #ff3333; text-decoration: none; text-transform: uppercase; }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 25px; font-weight: 600; transition: color 0.3s ease; }
+        .nav-links a:hover { color: #ff3333; }
+
+        /* Hero Banner */
+        .hero { 
+            text-align: center; padding: 100px 20px; 
+            background: linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 1)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070') center/cover; 
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 15px; color: #ffffff; text-transform: uppercase; letter-spacing: 2px; }
+        .hero h1 span { color: #ff3333; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; color: #bbbbbb; }
+        
+        /* Buttons */
+        .btn { padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; display: inline-block; border: none; cursor: pointer; }
+        .btn-discord { background-color: #5865F2; color: #fff; margin-right: 10px; }
+        .btn-discord:hover { background-color: #4752C4; }
+        .btn-download { background-color: #ff3333; color: #fff; }
+        .btn-download:hover { background-color: #cc0000; }
+
+        /* Content Sections */
+        section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2.2rem; border-bottom: 2px solid #222; padding-bottom: 15px; margin-bottom: 40px; color: #fff; text-transform: uppercase; }
+        
+        /* Grid Layouts for Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        
+        /* Individual Cards */
+        .card { background-color: #1a1a1a; padding: 30px; border-radius: 10px; border: 1px solid #333; transition: transform 0.3s ease; }
+        .card:hover { transform: translateY(-5px); border-color: #ff3333; }
+        .card h3 { color: #ff3333; margin-bottom: 15px; font-size: 1.4rem; }
+        .card p { font-size: 1rem; color: #aaaaaa; margin-bottom: 25px; min-height: 50px; }
+
+        /* Live Stream / Announcement Banner */
+        .announcement-box { 
+            background: linear-gradient(45deg, #1a1a1a, #2a1111); 
+            border-left: 5px solid #ff3333; padding: 25px; border-radius: 8px; margin-bottom: 40px; 
+        }
+        .announcement-box h2 { color: #fff; margin-bottom: 10px; font-size: 1.5rem; }
+        .announcement-box p { color: #ddd; margin-bottom: 15px; }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px; background-color: #111; font-size: 0.9rem; color: #666; border-top: 1px solid #222; }
+        footer p { margin-bottom: 10px; }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; }
+            .nav-links a { margin: 0 10px; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">Skull's Paradise</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#news">Updates</a>
+            <a href="#downloads">Downloads</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to <span>Paradise</span></h1>
+        <p>The official external resource hub for the Skull's Paradise community. Grab your files, check the latest updates, and get back in the game.</p>
+        <a href="https://discord.com/invite/skull-s-paradise-759811988204683275" class="btn btn-discord">Join the Discord</a>
+        <a href="#downloads" class="btn btn-download">Browse Files</a>
+    </section>
+
+    <!-- Stream & Server Updates -->
+    <section id="news">
+        <h2 class="section-title">Latest Updates</h2>
+        
+        <div class="announcement-box">
+            <h2>🔴 Catch Skullfrag Live</h2>
+            <p>We are live on YouTube! Drop in, hang out, and check out the latest gameplay. Don't forget to claim your active roles in the Discord.</p>
+            <a href="https://www.youtube.com/skullfrag" class="btn btn-download" style="background-color: #FF0000;">Watch Stream</a>
+        </div>
+    </section>
+
+    //<!-- Download Hub -->
+    <section id="downloads">
+        <h2 class="section-title">Community Files</h2>
+        
+        <div class="grid">
+            <!-- Download Card 1 -->
+            <div class="card">
+                <h3>GTA Stability Patch v1.4</h3>
+                <p>The latest community-tested fixes to prevent crashes and optimize performance during heavy loads.</p>
+                <a href="YOUR_EXTERNAL_LINK_HERE" class="btn btn-download" target="_blank">Download Patch</a>
+            </div>
+
+            <!-- Download Card 2 -->
+            <div class="card">
+                <h3>Required Server Tools</h3>
+                <p>Essential utilities and configuration files required for the optimal community setup.</p>
+                <a href="YOUR_EXTERNAL_LINK_HERE" class="btn btn-download" target="_blank">Download Tools</a>
+            </div>
+
+            <!-- Download Card 3 -->
+            <div class="card">
+                <h3>Graphics Optimization Preset</h3>
+                <p>Custom settings file balanced for both visual fidelity and smooth framerates.</p>
+                <a href="YOUR_EXTERNAL_LINK_HERE" class="btn btn-download" target="_blank">Download Preset</a>
+            </div>//
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Skull's Paradise. All rights reserved.</p>
+        <p><em>Disclaimer: All files provided are community modifications intended for educational and optimization purposes. This site is strictly compliant with Discord's Terms of Service.</em></p>
+    </footer>
+
+</body>
+</html>
